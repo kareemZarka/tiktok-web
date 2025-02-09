@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TikTok Auth Code</title>
+    <script>
+        // Extract the 'code' parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const authCode = urlParams.get("code");
+
+        if (authCode) {
+            // Display the auth code on the page
+            document.body.innerHTML = `
+                <h2>TikTok Authorization Successful! ✅</h2>
+                <p>Copy this Auth Code and paste it into your script:</p>
+                <code style="font-size: 18px; font-weight: bold; background: #f4f4f4; padding: 10px; display: block;">
+                    ${authCode}
+                </code>
+            `;
+        } else {
+            document.body.innerHTML = "<h2>⚠️ Error: No Auth Code Found!</h2>";
+        }
+    </script>
+</head>
+<body>
+    <h2>Processing TikTok Auth Code...</h2>
+</body>
+</html>
